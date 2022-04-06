@@ -1,0 +1,11 @@
+auth0_domain=api_base_url='hdev-zzx21jx2.us.auth0.com,
+auth0_client_id=MxyigIO5jqoiDi16TkWKeP3MpYoyAC0W
+auth0_client_secret=6UctofFZefRrseVVMFWUgEO3R-95RYgJvgITLzdXmCO4tMJU8h7riwbqynXYfsTv
+
+
+listing the heroku callback in the allowed callback URLs
+
+allowed web origins: 当前的本地 5000 == CORS
+
+
+ 

@@ -1,0 +1,134 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/grids-responsive-min.css" />
+  <link rel="stylesheet" href="/static/main.css">
+
+</head>
+
+<body>
+  <header2>
+      <h1>Sleep Survey</h1>
+      {% if message %}
+      <p class="message">{{ message | safe }}</p>
+      {% endif %}
+
+      
+      <form action="/Thanks" method="POST">
+
+        <div class="pure-form">
+          <h4>Please Enter Your Name</h4>
+          <input
+            type="text"
+            name="user"
+            placeholder="First Name, Last Name"
+          />
+        </div>
+
+        <div class="pure-form">
+          <h3>Gender</h3>
+          <select name="gender">
+            <option value="">Please Select Your Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Neuter gender">Neuter gender</option>
+            <option value="Transgender">Transgender</option>
+          </select>
+        </div>
+
+        <div class="pure-form">
+          <h3>Please Rate Your Sleeping Quality over past 1 month</h3>
+          <input type="radio" name="rating" value="1" /> 1
+          <input type="radio" name="rating" value="2" /> 2
+          <input type="radio" name="rating" value="3" /> 3
+          <input type="radio" name="rating" value="4" /> 4
+          <input type="radio" name="rating" value="5" /> 5
+          <input type="radio" name="rating" value="6" /> 6
+          <input type="radio" name="rating" value="7" /> 7
+          <input type="radio" name="rating" value="8"  checked /> 8
+          <input type="radio" name="rating" value="9" /> 9
+          <input type="radio" name="rating" value="10"/> 10
+        </div>
+
+          <h3>Choose your usual sleep problem in below if you had:</h3>
+          <!-- <div>
+            <input type="checkbox" value="Insomnia" name="problem">
+            <label for="problem">Insomnia</label>
+          </div>
+        <div>
+            <input type="checkbox" value="Sleep apnea" name="problem">
+            <label for="problem">Sleep apnea</label>
+        </div>
+        <div>
+            <input type="checkbox" value="Restless legs syndrome" name="problem">
+            <label for="problem">Restless legs syndrome</label>
+        </div> -->
+
+          <label for="checkbox-radio-option-two" class="pure-radio">
+              <input type="checkbox" id="checkbox-radio-option-two" name="problem" value="Insomnia" /> Insomnia
+          </label>
+          <label for="checkbox-radio-option-two" class="pure-radio">
+              <input type="checkbox" id="checkbox-radio-option-three" name="problem" value="Sleep apnea" /> Sleep apnea
+          </label>
+          <label for="checkbox-radio-option-two" class="pure-radio">
+            <input type="checkbox" id="checkbox-radio-option-three" name="problem" value="Restless legs syndrome" /> Restless legs syndrome
+          </label>
+          <label for="checkbox-radio-option-two" class="pure-radio">
+              <input type="checkbox" id="checkbox-radio-option-two" name="problem" value="other" checked="" /> Other Special Ones
+          </label>
+
+        <div class="pure-group">
+          <h3>Comments about your experience in sleeping</h3>
+          <p></p>
+          <textarea
+            name="comments"
+            id=""
+            cols="50"
+            rows="10"
+            placeholder="Tell us what you experienced during the night"
+          ></textarea>
+        </div>
+        <input type="submit" value="Submit" class="button-success pure-button" />
+      </form>
+    </header2>
+    <p></p>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      </head>
+      <body>      
+      <button onclick="myFunction()" class="button-secondary pure-button">Tell us how you feel</button>
+      <textarea
+      name="comments"
+      id="myDIV"
+      cols="30"
+      rows="10"
+      style="display:none;"
+      placeholder="Express you current emotion if you want"
+    ></textarea>
+    <style>
+      #myDIV {
+        width: 100%;
+        padding: 50px 0;
+        text-align: center;
+        background-color: lightblue;
+        margin-top: 20px;
+      }
+      </style>
+      <p></p>
+</body>
+</html>
+<script>
+  function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  </script>
